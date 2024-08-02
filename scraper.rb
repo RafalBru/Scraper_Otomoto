@@ -21,14 +21,17 @@ class Cars_scraper
         rok_produkcji = car.at_xpath('.//dt[contains(text(),"Rok produkcji")]//following-sibling::dd[1]')&.text&.strip
         paliwo = car.at_xpath('.//dt[contains(text(),"Rodzaj paliwa")]//following-sibling::dd[1]')&.text&.strip
         skrzynia_biegow = car.at_xpath('.//dt[contains(text(),"Skrzynia biegów")]//following-sibling::dd[1]')&.text&.strip
-  
-        if car_name && rok_produkcji && paliwo && skrzynia_biegow
+        przebieg = car.at_xpath('.//dt[contains(text(),"Przebieg")]/following-sibling::dd[1]')&.text&.strip
+        dodatkowe_informacje = car.xpath('.//p')&.text.strip.split(" • ")
+        if car_name && rok_produkcji && paliwo && skrzynia_biegow && dodatkowe_informacje
           car_info = Carinfo.new(
             image_url,
             car_name,
             rok_produkcji,
             paliwo,
-            skrzynia_biegow)
+            skrzynia_biegow,
+            przebieg,
+            dodatkowe_informacje)
           @arr.push(car_info)
           car_info.print_info
         end

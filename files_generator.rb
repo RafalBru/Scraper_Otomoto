@@ -5,13 +5,13 @@ require_relative 'carinfo.rb'
 
 class Files_Generator
   def generate_csv(arr)
-    CSV.open("otomoto.csv","w", col_sep: "\t") do |csv|
+    CSV.open("otomoto.csv","w", col_sep: ",") do |csv|
       csv << ["LINK","MARKA","MODEL","ROK PRODUKCJI","PALIWO","SKRZYNIA BIEGÓW"]
       arr.each do |car|
         fullname = car.nazwa
         marka, model = fullname.split(" ",2)
         #puts [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow].inspect
-        csv << [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow]
+        csv << [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow,car.przebieg]
       end
     end
   end
@@ -59,16 +59,18 @@ class Files_Generator
       </style>
     </head>
     <body>
-      <h1>Oferty samochodów</h1>
+      <h1>Oferty samochodów ze strony otomoto.pl</h1>
 
       <% arr2.each do |car| %>
         <div class="offer">
           <img src="<%= car.image_url %>" alt="<%= car.nazwa %>">
           <div class="offer-details">
             <h2><%= car.nazwa %> <span>(<%= car.rok_produkcji %>)</span></h2>
+            <p>Pojemność skokowa: <%= car.dodatkowe_informacje[0].gsub("1 / 6", " ") %> Moc silnika: <%= car.dodatkowe_informacje[1] %></p>
             <div class="specs">
               <p>Rodzaj paliwa: <%= car.rodzaj_paliwa %></p>
               <p>Skrzynia biegów: <%= car.skrzynia_biegow %></p>
+              <p>Przebieg: <%= car.przebieg %></p>
             </div>
           </div>
         </div>
