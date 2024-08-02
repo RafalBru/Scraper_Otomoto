@@ -9,11 +9,8 @@ class Carinfo
     @skrzynia_biegow = skrzynia_biegow
   end
   def print_info
-    puts @image_url
-    puts @nazwa
-    puts @rok_produkcji
-    puts @rodzaj_paliwa
-    puts @skrzynia_biegow
-    puts "====="
+    puts @image_url 
+    print @nazwa ,@rok_produkcji, @rodzaj_paliwa, @skrzynia_biegow
+    puts
   end
 end
