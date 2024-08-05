@@ -139,7 +139,7 @@
         </div>
 
         <div class="method-description">
-        <p>Rodzaj palia, które napędza samochód</p>
+        <p>Rodzaj paliwa, które napędza samochód</p>
         </div>
       </div>
       <div id="attribute-i-przebieg" class="method-detail">
@@ -152,9 +152,9 @@
         <p>Przebieg samochodu</p>
         </div>
       </div>
-      <div id="attribute-i-rok" class="method-detail">
+      <div id="attribute-i-rok_produkcjis" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">rok</span><span
+          <span class="method-name">rok_produkcjis</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
@@ -184,7 +184,7 @@
         <div class="method-header">
           <div class="method-heading">
             <span class="method-name">new</span><span
-              class="method-args">(image_url,nazwa,rok,rodzaj_paliwa,skrzynia_biegow,przebieg,dodatkowe_informacje)</span>
+              class="method-args">(image_url,nazwa,rok_produkcji,rodzaj_paliwa,skrzynia_biegow,przebieg,dodatkowe_informacje)</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
@@ -207,10 +207,10 @@
 
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File carinfo.rb, line 34</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">image_url</span>,<span class="ruby-identifier">nazwa</span>,<span class="ruby-identifier">rok</span>,<span class="ruby-identifier">rodzaj_paliwa</span>,<span class="ruby-identifier">skrzynia_biegow</span>,<span class="ruby-identifier">przebieg</span>,<span class="ruby-identifier">dodatkowe_informacje</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">image_url</span>,<span class="ruby-identifier">nazwa</span>,<span class="ruby-identifier">rok_produkcji</span>,<span class="ruby-identifier">rodzaj_paliwa</span>,<span class="ruby-identifier">skrzynia_biegow</span>,<span class="ruby-identifier">przebieg</span>,<span class="ruby-identifier">dodatkowe_informacje</span>)
   <span class="ruby-ivar">@image_url</span> = <span class="ruby-identifier">image_url</span>
   <span class="ruby-ivar">@nazwa</span> = <span class="ruby-identifier">nazwa</span>
-  <span class="ruby-ivar">@rok_produkcji</span> = <span class="ruby-identifier">rok</span>
+  <span class="ruby-ivar">@rok_produkcji</span> = <span class="ruby-identifier">rok_produkcji</span>
   <span class="ruby-ivar">@rodzaj_paliwa</span> = <span class="ruby-identifier">rodzaj_paliwa</span>
   <span class="ruby-ivar">@skrzynia_biegow</span> = <span class="ruby-identifier">skrzynia_biegow</span>
   <span class="ruby-ivar">@przebieg</span> = <span class="ruby-identifier">przebieg</span>

@@ -9,9 +9,9 @@ class Carinfo
   attr_reader :nazwa
 
   # Rok wyprodukowania samochodu
-  attr_reader :rok
+  attr_reader :rok_produkcjis
 
-  # Rodzaj palia, które napędza samochód
+  # Rodzaj paliwa, które napędza samochód
   attr_reader :paliwo
 
   # Skrzynia biegów, jaką posiada samochód
@@ -31,10 +31,10 @@ class Carinfo
   # * rodzaj_paliwa [String] - Rodzaj paliwa, który napędza samochód.
   # * skrzynia_biegow [String] - Rodzaj skrzynii biegów jaki posiada samochód.
   # * dodatkowe_informacje [String] - Dodakowe informacja takie jak pojemność skokowa czy moc silnia.
-  def initialize(image_url,nazwa,rok,rodzaj_paliwa,skrzynia_biegow,przebieg,dodatkowe_informacje)
+  def initialize(image_url,nazwa,rok_produkcji,rodzaj_paliwa,skrzynia_biegow,przebieg,dodatkowe_informacje)
     @image_url = image_url
     @nazwa = nazwa
-    @rok_produkcji = rok
+    @rok_produkcji = rok_produkcji
     @rodzaj_paliwa = rodzaj_paliwa
     @skrzynia_biegow = skrzynia_biegow
     @przebieg = przebieg

@@ -40,7 +40,7 @@ class Cars_scraper
             przebieg,
             dodatkowe_informacje)
           @arr.push(car_info)
-          #car_info.print_info
+          car_info.print_info
         end
       end
       page += 1
