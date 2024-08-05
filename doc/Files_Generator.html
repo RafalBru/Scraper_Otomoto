@@ -206,7 +206,7 @@
           &lt;img src=&quot;&lt;%= car.image_url %&gt;&quot; alt=&quot;&lt;%= car.nazwa %&gt;&quot;&gt;
           &lt;div class=&quot;offer-details&quot;&gt;
             &lt;h2&gt;&lt;%= car.nazwa %&gt; &lt;span&gt;(&lt;%= car.rok_produkcji %&gt;)&lt;/span&gt;&lt;/h2&gt;
-            &lt;p&gt;Pojemność skokowa: &lt;%= car.dodatkowe_informacje[0].gsub(&quot;1 / 6&quot;, &quot; &quot;) %&gt; Moc silnika: &lt;%= car.dodatkowe_informacje[1] %&gt;&lt;/p&gt;
+            &lt;p&gt;Pojemność skokowa: &lt;%= car.dodatkowe_informacje[0] %&gt; Moc silnika: &lt;%= car.dodatkowe_informacje[1] %&gt;&lt;/p&gt;
             &lt;div class=&quot;specs&quot;&gt;
               &lt;p&gt;Rodzaj paliwa: &lt;%= car.rodzaj_paliwa %&gt;&lt;/p&gt;
               &lt;p&gt;Skrzynia biegów: &lt;%= car.skrzynia_biegow %&gt;&lt;/p&gt;

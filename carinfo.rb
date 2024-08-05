@@ -2,28 +2,27 @@
 #
 # Klasa przechowuje informacje o samochodzie
 class Carinfo
-  # Atrybuty
-  # @!attribute [r] image_url
-  #   Link do obrazka samochodu.
-  #
-  # @!attribute [r] nazwa
-  #   Marka i model samochodu.
-  #
-  # @!attribute [r] rok_produkcji.
-  #   Rok wyprodukowania samochodu.
-  #
-  # @!attribute [r] rodzaj_paliwa
-  #   Rodzaj paliwa, które ma samochód.
-  #
-  # @!attribute [r] skrzynia_biegów
-  #   Skrzynia biegów, jaką posiada samochód.
-  #
-  # @!attribute [r] dodatkowe_informacje
-  #   Dodatkowe informacje takie jak pojemność skokowa czy moc silnika
-  #
-  attr_reader :image_url, :nazwa, :rok_produkcji, 
-  :rodzaj_paliwa, :skrzynia_biegow, :przebieg, 
-  :dodatkowe_informacje
+  # Link do obrazka samochodu
+  attr_reader :image_url
+
+  # Marka i model samochodu
+  attr_reader :nazwa
+
+  # Rok wyprodukowania samochodu
+  attr_reader :rok
+
+  # Rodzaj palia, które napędza samochód
+  attr_reader :paliwo
+
+  # Skrzynia biegów, jaką posiada samochód
+  attr_reader :skrzynia_biegow
+
+  # Przebieg samochodu
+  attr_reader :przebieg
+
+  # Dodatkowe informacje
+  attr_reader :dodatkowe_informacje
+
   # Inicjalizacja klasy
   #
   # * image_url [String] - Link do obrazu przedstawiającego dany samochód.
@@ -43,8 +42,10 @@ class Carinfo
   end
   # Funkcja generująca w terminalu informacje o danym samochodzie
   def print_info
-    puts @image_url 
-    print @nazwa ,@rok_produkcji ,@rodzaj_paliwa ,@skrzynia_biegow ,@przebieg, @pojemnosc_skokowa, @moc_silnika
-    puts
+    puts "Link do obrazu: #{@image_url}"
+    puts "Samochód: #{@nazwa}, Rok produkcji: #{@rok_produkcji}"
+    puts "Rodzaj paliwa: #{@rodzaj_paliwa}, Skrzynia biegów: #{@skrzynia_biegow}"
+    puts "Przebieg: #{@przebieg}"
+    puts "Pojemnosc silnika: #{@dodatkowe_informacje[0]}, Moc silnika: #{@dodatkowe_informacje[1]}"
   end
 end
