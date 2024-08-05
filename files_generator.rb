@@ -1,9 +1,15 @@
+# Import pliku (carinfo.rb) oraz modułów
 require "csv"
 require 'wicked_pdf'
 require 'erb'
 require_relative 'carinfo.rb'
 
+# Klasa reprezentuje generator plików
+#
+# Klasa umożliwia wygenerowanie plików CSV i PDF zawierających zescrapowanie dane
 class Files_Generator
+  # Funkcja generująca plik CSV
+  # * arr [Array] - tablica ze zescrapowanymi danymi
   def generate_csv(arr)
     CSV.open("otomoto.csv","w", col_sep: ",") do |csv|
       csv << ["LINK","MARKA","MODEL","ROK PRODUKCJI","PALIWO","SKRZYNIA BIEGÓW"]
@@ -15,6 +21,9 @@ class Files_Generator
       end
     end
   end
+  
+  # Funkcja generująca plik CSV
+  # * arr [Array] - tablica ze zescrapowanymi danymi
   def generate_pdf(arr)
     arr2 = arr
     html_temp = <<-HTML
@@ -66,7 +75,7 @@ class Files_Generator
           <img src="<%= car.image_url %>" alt="<%= car.nazwa %>">
           <div class="offer-details">
             <h2><%= car.nazwa %> <span>(<%= car.rok_produkcji %>)</span></h2>
-            <p>Pojemność skokowa: <%= car.dodatkowe_informacje[0].gsub("1 / 6", " ") %> Moc silnika: <%= car.dodatkowe_informacje[1] %></p>
+            <p>Pojemność skokowa: <%= car.dodatkowe_informacje[0] %> Moc silnika: <%= car.dodatkowe_informacje[1] %></p>
             <div class="specs">
               <p>Rodzaj paliwa: <%= car.rodzaj_paliwa %></p>
               <p>Skrzynia biegów: <%= car.skrzynia_biegow %></p>

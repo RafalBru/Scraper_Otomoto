@@ -1,3 +1,4 @@
+# Import plików 
 require_relative 'scraper.rb'
 require_relative 'files_generator.rb'
 
