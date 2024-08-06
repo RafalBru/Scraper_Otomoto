@@ -20,7 +20,7 @@ class Carinfo
   # Przebieg samochodu
   attr_reader :przebieg
 
-  # Dodatkowe informacje
+  # Dodatkowe informacje takie jak pojemność skokowa i moc silnika
   attr_reader :dodatkowe_informacje
 
   # Inicjalizacja klasy
