@@ -12,7 +12,7 @@ class Files_Generator
   # * arr [Array] - tablica ze zescrapowanymi danymi
   def generate_csv(arr)
     CSV.open("otomoto.csv","w", col_sep: ",", encoding: "UTF-8") do |csv|
-      csv << ["LINK","MARKA","MODEL","ROK PRODUKCJI","PALIWO","SKRZYNIA BIEGÓW","POJEMNOŚĆ SKOKOWA","MOC SILNIKA"]
+      csv << ["LINK","MARKA","MODEL","ROK PRODUKCJI","PALIWO","SKRZYNIA BIEGÓW","PRZEBIEG","POJEMNOŚĆ SKOKOWA","MOC SILNIKA"]
       arr.each do |car|
         fullname = car.nazwa
         dod_info = car.dodatkowe_informacje
