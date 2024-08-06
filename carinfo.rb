@@ -9,10 +9,10 @@ class Carinfo
   attr_reader :nazwa
 
   # Rok wyprodukowania samochodu
-  attr_reader :rok_produkcjis
+  attr_reader :rok_produkcji
 
   # Rodzaj paliwa, które napędza samochód
-  attr_reader :paliwo
+  attr_reader :rodzaj_paliwa
 
   # Skrzynia biegów, jaką posiada samochód
   attr_reader :skrzynia_biegow
