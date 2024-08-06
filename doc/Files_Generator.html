@@ -128,6 +128,10 @@
       <span class="ruby-identifier">fullname</span> = <span class="ruby-identifier">car</span>.<span class="ruby-identifier">nazwa</span>
       <span class="ruby-identifier">dod_info</span> = <span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>
       <span class="ruby-identifier">marka</span>, <span class="ruby-identifier">model</span> = <span class="ruby-identifier">fullname</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>,<span class="ruby-value">2</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;KM&quot;</span>)
+        <span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">&quot;brak danych&quot;</span>
+      <span class="ruby-keyword">end</span>
 
       <span class="ruby-comment">#puts [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow].inspect</span>
       <span class="ruby-identifier">csv</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">car</span>.<span class="ruby-identifier">image_url</span>,<span class="ruby-identifier">marka</span>,<span class="ruby-identifier">model</span>,<span class="ruby-identifier">car</span>.<span class="ruby-identifier">rok_produkcji</span>,<span class="ruby-identifier">car</span>.<span class="ruby-identifier">rodzaj_paliwa</span>,<span class="ruby-identifier">car</span>.<span class="ruby-identifier">skrzynia_biegow</span>,<span class="ruby-identifier">car</span>.<span class="ruby-identifier">przebieg</span>,<span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">car</span>.<span class="ruby-identifier">dodatkowe_informacje</span>[<span class="ruby-value">1</span>]]
@@ -156,7 +160,7 @@
 </li></ul>
 
           <div class="method-source-code" id="generate_pdf-source">
-            <pre><span class="ruby-comment"># File files_generator.rb, line 29</span>
+            <pre><span class="ruby-comment"># File files_generator.rb, line 33</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_pdf</span>(<span class="ruby-identifier">arr</span>)
     <span class="ruby-identifier">arr2</span> = <span class="ruby-identifier">arr</span>
     <span class="ruby-identifier">html_temp</span> = <span class="ruby-identifier">&lt;&lt;-HTML</span>

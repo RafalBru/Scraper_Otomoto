@@ -17,6 +17,10 @@ class Files_Generator
         fullname = car.nazwa
         dod_info = car.dodatkowe_informacje
         marka, model = fullname.split(" ",2)
+        if car.dodatkowe_informacje[0].include?("KM")
+          car.dodatkowe_informacje[1] = car.dodatkowe_informacje[0]
+          car.dodatkowe_informacje[0] = "brak danych"
+        end
 
         #puts [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow].inspect
         csv << [car.image_url,marka,model,car.rok_produkcji,car.rodzaj_paliwa,car.skrzynia_biegow,car.przebieg,car.dodatkowe_informacje[0],car.dodatkowe_informacje[1]]
